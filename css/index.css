@@ -51,14 +51,14 @@ body {
     margin: 0;
 }
 
-.modal-close-btn {
+.modal-close-btn, .modal-close-btns{
     float: right;
     font-size: 1.5em;
     color: #fff;
 }
 
-.modal-close-btn:hover,
-.modal-close-btn:focus {
+.modal-close-btn:hover, modal-close-btns:hover,
+.modal-close-btn:focus, .modal-close-btns:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -99,4 +99,15 @@ body {
     box-shadow: 2px 2px 7px #6f6f6f;
     color: #000;
     cursor: pointer;
+}
+
+.game-won {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
