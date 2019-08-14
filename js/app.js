@@ -101,7 +101,7 @@ if (this.y_axis < 0) { // when you get to the beginning of the box, it should st
     points++;
     pointsGotten.innerText = points * 50; //increase points by 50
 
-    if(points === 1 && lives > 0) {
+    if(points === 15 && lives > 0) {
        gameWonModal ();
        closeModals();
     }
