@@ -39,9 +39,9 @@ body {
 }
 
 .modal-header {
-    background: -webkit-linear-gradient(160deg, #03d3b9, #b26acc);
-    background: -o-linear-gradient(160deg, #03d3b9, #b26acc);
-    background: linear-gradient(160deg, #03d3b9, #b26acc);
+    background: -webkit-linear-gradient(160deg, #FF7D00, #ff8888);
+    background: -o-linear-gradient(160deg,  #FF7D00, #ff8888);
+    background: linear-gradient(160deg,  #FF7D00, #ff8888);
     padding: 15px;
     color: #fff;
 }
