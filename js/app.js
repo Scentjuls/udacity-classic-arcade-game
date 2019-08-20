@@ -41,9 +41,6 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    // console.log('x', this.x_axis)
-    // console.log('mov', this.movement)
-    // console.log('dt', this.dt)
     livesGotten.innerText = lives;
     this.x_axis += this.movement * dt;
 
@@ -77,7 +74,7 @@ class Player {
         this.x_axis = x_axis;
         this.y_axis = y_axis;
         this.movement = movement;
-        this.sprite = 'img/char-princess-girl.png';
+        this.sprite = 'img/char-boy.png';
     }
 };
 // This class requires an update(), render() and
@@ -101,10 +98,29 @@ if (this.y_axis < 0) { // when you get to the beginning of the box, it should st
     points++;
     pointsGotten.innerText = points * 50; //increase points by 50
 
-    if(points === 15 && lives > 0) {
-       gameWonModal ();
-       closeModals();
+    if(points === 5 && lives > 0) {
+        // change the player from the girl to the horn girl
+        player.setSprite("img/char-cat-girl.png");
+        // player.setSprite("img/Gem Blue.png");
     }
+
+    if(points === 10 && lives > 0) {
+        // change the player from the horn girl to the pink girl
+        player.setSprite("img/char-horn-girl.png");
+    }
+
+    if(points === 15 && lives > 0) {
+         // change the player from the pink girl to the princess girl
+         player.setSprite("img/char-pink-girl.png");
+    }
+
+    if(points === 20 && lives > 0) {
+        // change the player from the pink girl to the princess girl
+        player.setSprite("img/char-princess-girl.png");
+        // player.key("img/Key.png");
+      gameWonModal ();
+      closeModals();
+   }
 }
 
 
@@ -114,6 +130,14 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x_axis, this.y_axis);
 };
 
+Player.prototype.setSprite = function(sprite) {
+    this.sprite = sprite;
+}
+
+// Player.prototype.getKey = function(key) {
+//     this.key = key
+//     console.log('key', this.key)
+// }
 Player.prototype.handleInput = function(arrowkeys) {
     switch (arrowkeys) {
         case 'left': //move left 
@@ -170,6 +194,7 @@ modal.style.display = 'block';
 
 function closeModals() {
     modal.style.display = 'none';
+    setGame();
 }
 
 function gameWonModal() {
@@ -178,16 +203,19 @@ function gameWonModal() {
 
 function restartGame() {
     closeModals();
-    lives = 5;
-    points = 0;
-    livesGotten.innerText = lives;
-    pointsGotten.innerText = points;
+    setGame();
+   
 }
 
 function hideModalView() {
     gameWon.style.display = "none";
+    setGame();
+}
+
+function setGame() {
     lives = 5;
     points = 0;
     livesGotten.innerText = lives;
     pointsGotten.innerText = points;
+
 }

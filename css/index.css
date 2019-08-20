@@ -5,6 +5,7 @@
 
 body {
     text-align: center;
+    background-color: #FF7D00;
 }
 
 /* modal */
@@ -22,7 +23,7 @@ body {
 }
 
 .modal-content {
-    width: 60%;
+    width: 30%;
     margin: 20% auto;
     border-radius: 8px;
     background-color: #f4f4f4;
@@ -57,7 +58,7 @@ body {
     color: #fff;
 }
 
-.modal-close-btn:hover, modal-close-btns:hover,
+.modal-close-btn:hover, .modal-close-btns:hover,
 .modal-close-btn:focus, .modal-close-btns:focus {
     color: #000;
     text-decoration: none;
@@ -76,7 +77,7 @@ body {
 
 .modal-replay-btn {
     display: block;
-    background-color: #8c4ed6;
+    background-color: #FF7D00;
     color: white;
     font-size: 16px;
     padding: 10px 25px;
@@ -97,7 +98,7 @@ body {
 .modal-replay-btn:focus {
     -webkit-box-shadow: 2px 2px 7px #6f6f6f;
     box-shadow: 2px 2px 7px #6f6f6f;
-    color: #000;
+    color: white;
     cursor: pointer;
 }
 
